@@ -24,17 +24,15 @@ public class EquipoController {
     @GetMapping()
     public List<Equipo> selectEquipo() {
         List<Equipo> equipos = equipoRepository.findAll();
-
         return equipos;
     }
 
     @GetMapping("/{equipoCod}")
-    public EquipoJugadorDTO getEquipo (@PathVariable("equipoCod")Integer equipoCod){
+    public EquipoJugadorDTO getEquipo(@PathVariable("equipoCod") Integer equipoCod) {
         Equipo infoEquipo = equipoRepository.findEquipoByEquipoCod(equipoCod);
         List<Jugador> jugadores = jugadorRepository.findAllByEquipoCod(equipoCod);
         return new EquipoJugadorDTO(infoEquipo, jugadores);
     }
-
 
 
 }

@@ -17,4 +17,6 @@ public class EquipoJugadorDTO {
         this.equipo=infoEquipo;
         this.jugadores=jugadores;
     }
+
 }
+
